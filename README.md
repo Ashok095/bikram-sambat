@@ -1,6 +1,7 @@
 # Bikram Sambat (बि.सं.) for Python
 
 [![PyPI version](https://badge.fury.io/py/bikram-sambat.svg)](https://badge.fury.io/py/bikram-sambat)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/bikram-sambat)](https://pypi.org/project/bikram-sambat)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
