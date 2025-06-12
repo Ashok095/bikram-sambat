@@ -10,6 +10,16 @@
 
 This Python library provides a comprehensive and easy-to-use interface for working with Bikram Sambat dates and times. It offers `date`, `time`, and `datetime` objects that are analogous to Python's built-in `datetime` module, but specifically tailored for the BS calendar system. Key features include accurate AD-BS conversions, timezone awareness, BS-specific formatting (including Nepali numerals and month/weekday names), and robust parsing capabilities.
 
+## 🛠️ Installation
+Install the `bikram-sambat` package using pip:
+```bash
+pip install bikram-sambat
+```
+**Requirements**:
+- Python 3.8 or higher
+- The pytz library (automatically installed as a dependency)
+
+
 ## ✨ Features
 
 - **BS-Specific Date, Time, and DateTime Objects:**
