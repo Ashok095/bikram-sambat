@@ -2,7 +2,8 @@
 
 [![PyPI version](https://badge.fury.io/py/bikram-sambat.svg)](https://badge.fury.io/py/bikram-sambat)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/bikram-sambat)](https://pypi.org/project/bikram-sambat)
-
+[![Build Status](https://travis-ci.org/Ashok095/birkam-sambat.svg?branch=master)](https://travis-ci.org/Ashok095/birkam-sambat)
+[![Coverage Status](https://coveralls.io/repos/github/Ashok095/birkam-sambat/badge.svg?branch=master)](https://coveralls.io/github/Ashok095/birkam-sambat?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Bikram Sambat (BS)**, also known as Vikram Samvat, is a historical Hindu calendar system used in Nepal and several states in India. It is approximately 56.7 years ahead of the Gregorian (AD) calendar.
