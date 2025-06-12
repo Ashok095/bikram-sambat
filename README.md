@@ -2,7 +2,7 @@
 
 [![PyPI Version](https://img.shields.io/pypi/v/bikram-sambat)](https://pypi.org/project/bikram-sambat)
 [![Python Versions](https://img.shields.io/pypi/pyversions/bikram-sambat)](https://pypi.org/project/bikram-sambat)
-[![CI Status](https://github.com/Ashok095/bikram-sambat/actions/workflows/ci.yml/badge.svg)](https://github.com/Ashok095/bikram-sambat/actions/workflows/ci.yml)
+[![CI/CD Status](https://github.com/Ashok095/birkam-sambat/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Ashok095/birkam-sambat/actions/workflows/ci.yml)
 [![Coverage Status](https://coveralls.io/repos/github/Ashok095/bikram-sambat/badge.svg?branch=main)](https://coveralls.io/github/Ashok095/bikram-sambat?branch=main)
 [![License](https://img.shields.io/pypi/l/bikram-sambat)](https://opensource.org/licenses/MIT)
 
