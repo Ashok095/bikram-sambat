@@ -12,6 +12,7 @@ underscore `_` are internal helpers, while the others form the primary
 conversion API used by other modules in the package.
 """
 
+from typing import Optional, Union
 import datetime as _dt
 import bisect
 
@@ -274,7 +275,7 @@ def bs_to_ad(bs_year: int, bs_month: int, bs_day: int) -> _dt.date:
 
 def ad_datetime_to_bs(
     greg_dt: _dt.datetime,
-) -> tuple[int, int, int, int, int, int, int, _dt.tzinfo | None]:
+) -> tuple[int, int, int, int, int, int, int, Optional[_dt.tzinfo]]:
     """Converts a Gregorian (AD) datetime object to a BS datetime tuple.
 
     The time components (hour, minute, etc.) and timezone are preserved.
@@ -283,7 +284,7 @@ def ad_datetime_to_bs(
         greg_dt (_dt.datetime): The Gregorian `datetime.datetime` object to convert.
 
     Returns:
-        tuple[int, int, int, int, int, int, int, _dt.tzinfo | None]: A tuple
+        tuple[int, int, int, int, int, int, int, Optional[_dt.tzinfo]]: A tuple
         containing the BS (year, month, day, hour, minute, second,
         microsecond, tzinfo).
 
@@ -316,7 +317,7 @@ def bs_datetime_to_ad(
     minute: int = 0,
     second: int = 0,
     microsecond: int = 0,
-    tzinfo: _dt.tzinfo | None = None,
+    tzinfo: Optional[_dt.tzinfo] = None,
 ) -> _dt.datetime:
     """Converts BS datetime components to a Gregorian (AD) datetime object.
 
@@ -328,7 +329,7 @@ def bs_datetime_to_ad(
         minute (int): The minute (0-59). Defaults to 0.
         second (int): The second (0-59). Defaults to 0.
         microsecond (int): The microsecond (0-999999). Defaults to 0.
-        tzinfo (_dt.tzinfo | None): The timezone info object. Defaults to None.
+        tzinfo (Optional[_dt.tzinfo]): The timezone info object. Defaults to None.
 
     Returns:
         _dt.datetime: The equivalent Gregorian `datetime.datetime` object.

@@ -120,7 +120,6 @@ class BSDatetime(_dt.datetime):
         2081-04-15 00:45:00 EDT-0400
     """
 
-
     _bs_year: int
     _bs_date_part: BSDate
     _bs_month: int
