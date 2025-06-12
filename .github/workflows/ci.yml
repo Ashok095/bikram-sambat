@@ -9,7 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false # Allows all Python versions to finish even if one fails
+      fail-fast: false
       matrix:
         python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
@@ -34,14 +34,14 @@ jobs:
     - name: Upload partial coverage report to Coveralls
       uses: coverallsapp/github-action@v2
       with:
+        flag-name: run-${{ matrix.python-version }}
         parallel: true
 
   # This job runs only AFTER all the parallel 'test' jobs have finished
   coveralls-finish:
-    needs: test # This ensures this job waits for the 'test' jobs
+    needs: test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4 
     - name: Finalize Coveralls build
       uses: coverallsapp/github-action@v2
       with:
