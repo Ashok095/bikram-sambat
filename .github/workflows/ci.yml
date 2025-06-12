@@ -1,11 +1,8 @@
-# .github/workflows/ci.yml
-
 name: Run Tests and Check Coverage
 
 on: [push, pull_request]
 
 jobs:
-  # This job runs the tests in parallel for each Python version
   test:
     runs-on: ubuntu-latest
     strategy:
@@ -31,18 +28,29 @@ jobs:
       run: |
         pytest --cov=bikram_sambat --cov-report=xml
 
+    - name: Check coverage file
+      run: cat coverage.xml  # Optional: for debugging
+
     - name: Upload partial coverage report to Coveralls
       uses: coverallsapp/github-action@v2
       with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        file: coverage.xml
+        format: cobertura
         flag-name: run-${{ matrix.python-version }}
         parallel: true
+        debug: true
+        allow-empty: true
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
 
-  # This job runs only AFTER all the parallel 'test' jobs have finished
   coveralls-finish:
     needs: test
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
     - name: Finalize Coveralls build
       uses: coverallsapp/github-action@v2
       with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         parallel-finished: true
