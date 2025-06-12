@@ -17,12 +17,11 @@ Attributes:
     BS_REFERENCE_DATE_AD (_dt.date): The Gregorian (AD) date that serves as a
         fixed anchor point for all conversion calculations. This date is the
         known equivalent of `BS_REFERENCE_DATE_BS_TUPLE`.
-    BS_REFERENCE_DATE_BS_TUPLE (tuple[int, int, int]): The Bikram Sambat (BS)
+    BS_REFERENCE_DATE_BS_TUPLE (Tuple[int, int, int]): The Bikram Sambat (BS)
         date, as a (year, month, day) tuple, that corresponds to the
         `BS_REFERENCE_DATE_AD`. This pair of reference dates is fundamental
         to the conversion algorithm.
 """
-
 import datetime as _dt
 
 BS_EPOCH_START_YEAR = 1901
@@ -43,4 +42,4 @@ BS_REFERENCE_DATE_AD = _dt.date(1844, 4, 11)
 """_dt.date: The Gregorian (AD) component of the reference anchor date."""
 
 BS_REFERENCE_DATE_BS_TUPLE = (1901, 1, 1)
-"""tuple[int, int, int]: The Bikram Sambat (BS) component of the reference anchor date."""
+"""Tuple[int, int, int]: The Bikram Sambat (BS) component of the reference anchor date."""

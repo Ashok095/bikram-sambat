@@ -1208,24 +1208,3 @@ BS_YEAR_START_ORDINAL = {
     2198: 108483,
     2199: 108848,
 }
-
-
-""""
-Code to generate derivatives from YEAR_MONTH_DAYS_BS
-## derived data:
-cum_dict = {}
-days_count = {}
-ordinal_count = {1901:1}
-count = 1
-for year, values in YEAR_MONTH_DAYS_BS.items():
-    cum_list = [0]
-    for value in values:
-        cum_list.append(cum_list[-1] + value)
-        count += value
-    
-    cum_dict[year] = cum_list[:-1]
-
-    days_count[year] = cum_list[-1]
-    ordinal_count[year+1] = count
-
-"""

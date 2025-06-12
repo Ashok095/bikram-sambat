@@ -12,7 +12,7 @@ underscore `_` are internal helpers, while the others form the primary
 conversion API used by other modules in the package.
 """
 
-from typing import Optional, Union
+from typing import Optional, Tuple
 import datetime as _dt
 import bisect
 
@@ -134,7 +134,7 @@ def _bs_ymd_to_ordinal(year: int, month: int, day: int) -> int:
     return days_before_year_start + days_before_month_start_in_year + day
 
 
-def _bs_ordinal_to_ymd(bs_ordinal: int) -> tuple[int, int, int]:
+def _bs_ordinal_to_ymd(bs_ordinal: int) -> Tuple[int, int, int]:
     """Converts a BS ordinal number back to a BS (year, month, day) tuple.
 
     This function uses an efficient binary search (`bisect`) on pre-computed
@@ -144,7 +144,7 @@ def _bs_ordinal_to_ymd(bs_ordinal: int) -> tuple[int, int, int]:
         bs_ordinal (int): The BS ordinal to convert.
 
     Returns:
-        tuple[int, int, int]: A tuple containing the (year, month, day).
+        Tuple[int, int, int]: A tuple containing the (year, month, day).
 
     Raises:
         DateOutOfRangeError: If the provided `bs_ordinal` is outside the
@@ -184,14 +184,14 @@ def _bs_ordinal_to_ymd(bs_ordinal: int) -> tuple[int, int, int]:
 # --- Public Conversion API ---
 
 
-def ad_to_bs(greg_date: _dt.date) -> tuple[int, int, int]:
+def ad_to_bs(greg_date: _dt.date) -> Tuple[int, int, int]:
     """Converts a Gregorian (AD) date to a Bikram Sambat (BS) date.
 
     Args:
         greg_date (_dt.date): The Gregorian `datetime.date` object to convert.
 
     Returns:
-        tuple[int, int, int]: The equivalent BS date as a (year, month, day) tuple.
+        Tuple[int, int, int]: The equivalent BS date as a (year, month, day) tuple.
 
     Raises:
         InvalidTypeError: If `greg_date` is not a `datetime.date` object.
@@ -275,7 +275,7 @@ def bs_to_ad(bs_year: int, bs_month: int, bs_day: int) -> _dt.date:
 
 def ad_datetime_to_bs(
     greg_dt: _dt.datetime,
-) -> tuple[int, int, int, int, int, int, int, Optional[_dt.tzinfo]]:
+) -> Tuple[int, int, int, int, int, int, int, Optional[_dt.tzinfo]]:
     """Converts a Gregorian (AD) datetime object to a BS datetime tuple.
 
     The time components (hour, minute, etc.) and timezone are preserved.
@@ -284,7 +284,7 @@ def ad_datetime_to_bs(
         greg_dt (_dt.datetime): The Gregorian `datetime.datetime` object to convert.
 
     Returns:
-        tuple[int, int, int, int, int, int, int, Optional[_dt.tzinfo]]: A tuple
+        Tuple[int, int, int, int, int, int, int, Optional[_dt.tzinfo]]: A tuple
         containing the BS (year, month, day, hour, minute, second,
         microsecond, tzinfo).
 
