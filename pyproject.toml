@@ -40,6 +40,11 @@ Documentation = "https://bikram-sambat.readthedocs.io"  # Optional, if you host 
 [project.optional-dependencies]
 test = ["pytest", "pytest-cov"]
 
+docs = [
+  "sphinx",
+  "sphinx-rtd-theme"
+]
+
 [tool.setuptools]
 packages = ["bikram_sambat"]
 include-package-data = true
