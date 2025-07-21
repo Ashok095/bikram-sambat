@@ -11,11 +11,10 @@ A comprehensive, modern, and easy-to-use Python library for the Bikram Sambat (B
    :maxdepth: 2
    :caption: Contents:
 
-.. Hiding the detailed table of contents for now, can be added later
-.. introduction
-.. installation
-.. usage
-.. api
+   installation
+   quickstart
+   user_guide
+   api_reference
 
 Key Features
 ------------
