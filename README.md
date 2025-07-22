@@ -92,13 +92,13 @@ today_bs = date.today()
 print(f"Today (BS): {today_bs}")
 
 # Convert BS to AD
-ad_date = bs_date.to_gregorian()
+ad_date = bs_date.togregorian()
 print(f"Equivalent AD Date: {ad_date}") # Output: Equivalent AD Date: 2023-09-01 (Example)
 
 # Convert AD to BS
 from datetime import date as ad_py_date
 ad_another_date = ad_py_date(2024, 1, 1)
-bs_converted_date = date.from_gregorian(ad_another_date)
+bs_converted_date = date.fromgregorian(ad_another_date)
 print(f"AD {ad_another_date} is BS {bs_converted_date}")
 
 # Formatting
@@ -140,7 +140,7 @@ now_bs_utc = now_bs_nepal.astimezone(utc_timezone)
 print(f"Now (BS, UTC): {now_bs_utc}")
 
 # Convert BS datetime to AD datetime
-ad_dt = bs_dt_aware.to_gregorian()
+ad_dt = bs_dt_aware.togregorian()
 print(f"Equivalent AD Datetime: {ad_dt}")
 
 # --- Arithmetic ---

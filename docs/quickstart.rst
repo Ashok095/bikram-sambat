@@ -18,7 +18,7 @@ This guide provides a brief overview of the ``bikram-sambat`` library's main fea
    # >> BS Date: 2081-04-15
 
    # Convert to Gregorian
-   greg_date = bs_date.to_gregorian()
+   greg_date = bs_date.togregorian()
    print(f"Gregorian equivalent: {greg_date}")
    # >> Gregorian equivalent: 2024-07-30
 
@@ -36,7 +36,9 @@ This guide provides a brief overview of the ``bikram-sambat`` library's main fea
 
    # --- Arithmetic ---
 
-   # Perform arithmetic
-   event_date = date(2082, 1, 1)
-   days_until_event = event_date - date.today()
-   print(f"Days until new year 2082: {days_until_event.days}")
+   # Perform arithmetic between two fixed dates
+   start_date = date(2081, 12, 1) # Chaitra 1, 2081
+   end_of_year = date(2081, 12, 30) # End of Chaitra
+   days_left = end_of_year - start_date
+   print(f"Days from {start_date} to {end_of_year}: {days_left.days}")
+   # >> Days from 2081-12-01 to 2081-12-30: 29

@@ -25,10 +25,10 @@
       # Convert from Gregorian
       from datetime import datetime as ad_datetime
       ad_dt = ad_datetime(2024, 4, 13, 10, 30, 45)
-      bs_dt = datetime.from_gregorian(ad_dt)
+      bs_dt = datetime.fromgregorian(ad_dt)
 
       # Convert to Gregorian
-      ad_dt_new = bs_dt.to_gregorian()
+      ad_dt_new = bs_dt.togregorian()
 
       # Arithmetic
       dt2 = dt + timedelta(days=10, hours=5)
@@ -39,5 +39,10 @@
 
       # Formatting
       print(dt.strftime("%Y-%m-%d %H:%M:%S"))
+      # >> 2081-01-01 10:30:45
+
       print(dt_aware.strftime("%A, %B %d, %Y %I:%M:%S %p %Z"))
+      # >> Saturday, Baishakh 01, 2081 10:00:00 AM Asia/Kathmandu
+
       print(dt_aware.strftime("%G, %N %D, %K %i:%l:%s %P"))
+      # >> शनिबार, वैशाख ०१, २०८१ १०:००:०० पहिले

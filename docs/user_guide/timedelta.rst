@@ -17,14 +17,17 @@ You can create a ``timedelta`` object by specifying the duration in days, second
    # A duration of 10 days
    delta1 = timedelta(days=10)
    print(f"Delta 1: {delta1}")
+   # >> Delta 1: 10 days, 0:00:00
 
    # A duration of 5 hours and 30 minutes
    delta2 = timedelta(hours=5, minutes=30)
    print(f"Delta 2: {delta2}")
+   # >> Delta 2: 5:30:00
 
    # A complex duration
    delta3 = timedelta(weeks=2, days=3, hours=4, minutes=5, seconds=6, milliseconds=7, microseconds=8)
    print(f"Delta 3: {delta3}")
+   # >> Delta 3: 17 days, 4:05:06.007008
 
 Timedelta Arithmetic
 --------------------
@@ -41,18 +44,22 @@ You can perform arithmetic with ``timedelta`` objects.
    # Add two timedeltas
    total_delta = delta1 + delta2
    print(f"{delta1} + {delta2} = {total_delta}")
+   # >> 1 day, 0:00:00 + 12:00:00 = 1 day, 12:00:00
 
    # Subtract two timedeltas
    diff_delta = delta1 - delta2
    print(f"{delta1} - {delta2} = {diff_delta}")
+   # >> 1 day, 0:00:00 - 12:00:00 = 12:00:00
 
    # Multiply a timedelta by a number
    multiplied_delta = delta1 * 2
    print(f"{delta1} * 2 = {multiplied_delta}")
+   # >> 1 day, 0:00:00 * 2.5 = 2 days, 12:00:00
 
    # Divide a timedelta by a number
    divided_delta = delta1 / 2
    print(f"{delta1} / 2 = {divided_delta}")
+   # >> 1 day, 0:00:00 / 2 = 12:00:00
 
 Using Timedeltas with Dates and Datetimes
 -----------------------------------------

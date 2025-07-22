@@ -17,6 +17,7 @@ You can create a ``time`` object by providing the hour, minute, second, and micr
    # Create a specific time
    t = time(10, 30, 45, 123456)
    print(f"Time: {t}")
+   # >> Time: 10:30:45.123456
 
 Accessing Time Components
 -------------------------
@@ -30,9 +31,16 @@ You can access the components of a ``time`` object:
    t = time(10, 30, 45, 123456)
 
    print(f"Hour: {t.hour}")
+   # >> Hour: 10
+
    print(f"Minute: {t.minute}")
+   # >> Minute: 30
+
    print(f"Second: {t.second}")
+   # >> Second: 45
+
    print(f"Microsecond: {t.microsecond}")
+   # >> Microsecond: 123456
 
 Timezones
 ---------
@@ -46,10 +54,15 @@ You can create timezone-aware ``time`` objects by passing a ``tzinfo`` object. S
    # Create a naive time
    naive_time = time(10, 30)
    print(f"Naive time: {naive_time}")
+   # >> Naive time: 10:30:00
 
    # Create a timezone-aware time
    aware_time = time(10, 30, tzinfo=tz.nepal)
    print(f"Aware time: {aware_time}")
+   # >> Aware time: 10:30:00+05:45
+
+.. note::
+   For a `time`-only object, calculating the UTC offset for timezones with Daylight Saving Time (DST) requires a reference date. This library uses the current system date for this calculation. Therefore, the UTC offset (`%z`) for a `time` object may vary depending on the day the code is run.
 
 Formatting Times
 ----------------
