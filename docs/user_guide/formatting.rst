@@ -53,13 +53,44 @@ These directives allow you to format dates and times using Nepali numerals and n
 
    # Standard formatting
    print(dt.strftime("%Y-%m-%d %H:%M:%S"))
+   # >> 2081-01-01 13:30:45
+
    print(dt.strftime("%A, %B %d, %Y"))
+   # >> Saturday, Baishakh 01, 2081
+
 
    # Nepali formatting
    print(dt.strftime("%K-%N-%D %i:%l:%s %P"))
+   # >> २०८१-वैशाख-०१ ०१:३०:४५ पछिल्लो
+
    print(dt.strftime("%G, %N %D, %K"))
+   # >> शनिबार, वैशाख ०१, २०८१
 
-Parsing with ``fromstrftime`` (Not Yet Implemented)
----------------------------------------------------
 
-The ``fromstrftime`` method, which will parse a string into a ``date``, ``time``, or ``datetime`` object, is planned for a future release.
+Parsing with ``fromstrftime``
+-----------------------------
+
+The ``fromstrftime`` method, which will parse a string into a ``date``, ``time``, or ``datetime`` object, is the reverse of `strftime`.
+
+.. code-block:: python
+
+    from bikram_sambat import datetime
+
+    datetime_str = "2081-04-15 10:30:00"
+    format_str = "%Y-%m-%d %H:%M:%S"
+    dt = datetime.fromstrftime(datetime_str, format_str)
+    print(dt)
+    # >> 2081-04-15T10:30:00
+
+   date_str_nepali = "शनिबार, वैशाख ०१, २०८१"
+   format_str_date = "%G, %N %D, %K"
+   parsed_date = date.fromstrftime(date_str_nepali, format_str_date)
+   print(f"Parsed nepali date string '{date_str_nepali}': {parsed_date}")
+   # >> Parsed nepali date string 'शनिबार, वैशाख ०१, २०८१': 2081-01-01
+
+   dt_str = "2081-04-15 10:30 PM"
+   format_str_dt = "%Y-%m-%d %I:%M %p"
+   parsed_dt = datetime.fromstrftime(dt_str, format_str_dt)
+   print(f"Parsed datetime string '{dt_str}': {parsed_dt}")
+   # >> Parsed datetime string '2081-04-15 10:30 PM': 2081-04-15T22:30:00
+

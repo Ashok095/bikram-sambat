@@ -17,10 +17,12 @@ Creating a new ``date`` object is as simple as providing the year, month, and da
    # Create a specific date (New Year's Day 2081 BS)
    new_year_2081 = date(2081, 1, 1)
    print(f"New Year's Day 2081 BS: {new_year_2081}")
+   # >> New Year's Day 2081 BS: 2081-01-01
 
    # Another example (a date in the middle of the year)
    some_day = date(2080, 5, 15)
    print(f"A specific day: {some_day}")
+   # >> A specific day: 2080-05-15
 
 You can also get today's date in the Bikram Sambat calendar using the ``today()`` class method.
 
@@ -31,6 +33,7 @@ You can also get today's date in the Bikram Sambat calendar using the ``today()`
    # Get today's date
    today_bs = date.today()
    print(f"Today's date in BS is: {today_bs}")
+   # >> Today's date in BS is: 2082-04-06
 
 Accessing Date Components
 -------------------------
@@ -44,8 +47,13 @@ Once you have a ``date`` object, you can easily access its components:
    d = date(2081, 4, 15)
 
    print(f"Year: {d.year}")
+   # >> Year: 2081
+
    print(f"Month: {d.month}")
+   # >> Month: 4
+
    print(f"Day: {d.day}")
+   # >> Day: 15
 
 Comparing Dates
 ---------------
@@ -61,7 +69,9 @@ You can compare two ``date`` objects using the standard comparison operators.
    date3 = date(2081, 1, 1)
 
    print(f"{date1} < {date2}: {date1 < date2}")
+   # >> 2081-01-01 < 2081-01-02: True
    print(f"{date1} == {date3}: {date1 == date3}")
+   # >> 2081-01-01 == 2081-01-01: True
 
 Date Arithmetic
 ---------------
@@ -79,7 +89,12 @@ You can perform arithmetic on ``date`` objects using ``timedelta`` objects.
    past_date = d - delta
 
    print(f"10 days after {d} is {future_date}")
+   # >> 10 days after 2081-01-01 is 2081-01-11
+
    print(f"10 days before {d} is {past_date}")
+   # >> 10 days before 2081-01-01 is 2080-12-21
+
+
 
 You can also find the difference between two dates:
 
@@ -92,7 +107,8 @@ You can also find the difference between two dates:
 
    diff = date2 - date1
    print(f"The difference between {date1} and {date2} is {diff.days} days.")
-
+   # >> The difference between 2081-01-01 and 2081-01-11 is 10 days.
+   
 Converting to and from Gregorian Dates
 --------------------------------------
 

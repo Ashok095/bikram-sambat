@@ -17,5 +17,3 @@ This guide provides a more in-depth look at the ``bikram-sambat`` library.
    user_guide/formatting
    user_guide/conversion
 
-.. note::
-   This user guide is currently under construction. More detailed documentation will be added soon.

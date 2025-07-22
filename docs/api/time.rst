@@ -23,5 +23,11 @@
 
       # Formatting
       print(t.strftime("%H:%M:%S"))
+      # >> 10:30:45
+
       print(t_aware.strftime("%I:%M:%S %p %Z"))
+      # >> 10:30:45 AM Asia/Kathmandu
+
       print(t_aware.strftime("%i:%l:%s %P"))
+      # >> १०:३०:४५ पहिले
+      
