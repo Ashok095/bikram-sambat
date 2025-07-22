@@ -84,72 +84,98 @@ from bikram_sambat.timezone import nepal, utc
 # --- Bikram Sambat Dates ---
 # Create a BS date
 bs_date = date(2080, 5, 15)  # BS: 2080 Bhadra 15
-print(f"BS Date: {bs_date}")  # Output: BS Date: 2080-05-15
+print(f"BS Date: {bs_date}")
+# >> BS Date: 2080-05-15
+
 print(f"Year: {bs_date.year}, Month: {bs_date.month}, Day: {bs_date.day}")
+# >> Year: 2080, Month: 5, Day: 15
 
 # Today's BS date
 today_bs = date.today()
 print(f"Today (BS): {today_bs}")
+# >> Today (BS): 2082-04-06
 
 # Convert BS to AD
 ad_date = bs_date.togregorian()
-print(f"Equivalent AD Date: {ad_date}") # Output: Equivalent AD Date: 2023-09-01 (Example)
+print(f"Equivalent AD Date: {ad_date}")
+# >> Equivalent AD Date: 2023-09-01
 
 # Convert AD to BS
 from datetime import date as ad_py_date
 ad_another_date = ad_py_date(2024, 1, 1)
 bs_converted_date = date.fromgregorian(ad_another_date)
 print(f"AD {ad_another_date} is BS {bs_converted_date}")
+# >> AD 2024-01-01 is BS 2080-09-16
 
 # Formatting
 print(bs_date.strftime("%Y %B %d, %A (%K %N %D, %G)"))
-# Example Output: 2080 Bhadra 15, Friday (२०८० भदौ १५, शुक्रबार)
+# >> 2080 Bhadra 15, Friday (२०८० भदौ १५, शुक्रबार)
 
 # --- Bikram Sambat Times ---
 # Create a BS time (naive)
 bs_time = time(14, 30, 45)
-print(f"BS Time: {bs_time}") # Output: BS Time: 14:30:45
+print(f"BS Time: {bs_time}")
+# >> BS Time: 14:30:45
+
 
 # Create a timezone-aware BS time
-bs_time_nepal = time(10, 15, 0, tzinfo=nepal_timezone)
-print(f"BS Time (Nepal): {bs_time_nepal} {bs_time_nepal.tzname()}")
+bs_time_nepal = time(10, 15, 0, tzinfo=nepal)
+print(f"BS Time (Nepal): {bs_time_nepal} {bs_time_nepal}")
+# >> BS Time (Nepal): 10:15:00 10:15:00
+
 
 # Formatting time
 print(bs_time_nepal.strftime("%I:%M:%S %p %P [%Z]"))
-# Example Output: 10:15:00 AM पहिले [Asia/Kathmandu]
+# >> 10:15:00 AM पहिले [Asia/Kathmandu]
+
 
 # --- Bikram Sambat Datetimes ---
 # Create a naive BS datetime
 bs_dt_naive = datetime(2081, 1, 1, 10, 0, 0) # BS: 2081 Baishakh 1, 10:00 AM
 print(f"BS Datetime (naive): {bs_dt_naive}")
+# >> BS Datetime (naive): 2081-01-01T10:00:00
+
 
 # Create a timezone-aware BS datetime
-bs_dt_aware = datetime(2081, 1, 1, 10, 0, 0, tzinfo=nepal_timezone)
+bs_dt_aware = datetime(2081, 1, 1, 10, 0, 0, tzinfo=nepal)
 print(f"BS Datetime (aware): {bs_dt_aware}")
+# >> BS Datetime (aware): 2081-01-01T10:00:00+0545
+
 
 # Current BS datetime (naive)
 now_bs_naive = datetime.now()
 print(f"Now (BS, naive): {now_bs_naive}")
+# >> Now (BS, naive): 2082-04-06T03:41:28.962229
+
 
 # Current BS datetime in a specific timezone
-now_bs_nepal = datetime.now(nepal_timezone)
+now_bs_nepal = datetime.now(nepal)
 print(f"Now (BS, Nepal): {now_bs_nepal}")
+# >> Now (BS, Nepal): 2082-04-06T09:26:28.962327+0545
+
 
 # Convert to another timezone
-now_bs_utc = now_bs_nepal.astimezone(utc_timezone)
+now_bs_utc = now_bs_nepal.astimezone(utc)
 print(f"Now (BS, UTC): {now_bs_utc}")
+# >> Now (BS, UTC): 2082-04-06T03:41:28.962327+0000
+
 
 # Convert BS datetime to AD datetime
 ad_dt = bs_dt_aware.togregorian()
 print(f"Equivalent AD Datetime: {ad_dt}")
+# >> Equivalent AD Datetime: 2024-04-13 10:00:00+05:45
 
 # --- Arithmetic ---
 delta = timedelta(days=10, hours=5)
 future_dt = now_bs_nepal + delta
 print(f"10 days, 5 hours from now (BS): {future_dt}")
+# >> 10 days, 5 hours from now (BS): 2082-04-16T14:26:28.962327+0545
+
 
 diff = future_dt - now_bs_nepal
 print(f"Difference: {diff}")
+# >> Difference: 10 days, 5:00:00
+
 
 ```
 
@@ -165,7 +191,7 @@ Contributions are welcome!.
 
 Read the full documentattion here: https://bikram-sambat.readthedocs.io/en/latest/
 
-
 ## 🙌 Support
+
 If you find this project useful, consider starring ⭐ the repo or sharing it.
 For feature requests or issues, please open a ticket at the [Issue Tracker](https://github.com/ashok095/bikram-sambat/issues)
