@@ -77,7 +77,7 @@ from .bs_timezone import (
 
 
 from . import constants
-
+from .calendar import bs_calendar, ad_calendar, monthcalendar, CalendarMonthData, CalendarDayData
 
 __all__ = [
     # Core classes
@@ -100,6 +100,12 @@ __all__ = [
     "tzinfo_base",
     # Constants module
     "constants",
+    # Calendar module
+    "bs_calendar",
+    "ad_calendar",
+    "monthcalendar",
+    "CalendarMonthData",
+    "CalendarDayData",
 ]
 
 __version__ = "0.1.1"
