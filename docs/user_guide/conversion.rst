@@ -81,3 +81,8 @@ To convert a date or datetime from Gregorian to Bikram Sambat, use the ``fromgre
    bikram_sambat_dt = datetime.fromgregorian(gregorian_dt)
    print(f"Bikram Sambat Datetime: {bikram_sambat_dt}")
    # >> Bikram Sambat Datetime: 2081-01-01T12:00:00+0000
+
+Bulk Conversions & Calendar Generation
+--------------------------------------
+
+For bulk date conversions or to generate structural mappings between BS and AD for entire months or years, it is recommended to use the :ref:`user_guide_calendar` module. It provides highly optimized utilities for generating comprehensive calendar datasets.
