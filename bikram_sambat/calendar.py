@@ -6,7 +6,7 @@ data for specific months or entire years, and a `monthcalendar` function
 similar to the standard Python `calendar` module.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 from typing import List, Optional, Union
 import functools
 import calendar as pycalendar
@@ -29,6 +29,10 @@ class CalendarDayData:
     ad_full_date: str
     week_day: int  # 0=Sunday, 6=Saturday
 
+    def to_dict(self) -> dict:
+        """Returns the day data as a dictionary."""
+        return asdict(self)
+
 @dataclass
 class CalendarMonthData:
     """Represents a month in the calendar."""
@@ -37,6 +41,13 @@ class CalendarMonthData:
     ad_year: int
     ad_month: int
     days: List[CalendarDayData]
+
+    def to_dict(self) -> dict:
+        """Returns the month data as a dictionary.
+        
+        Nested `CalendarDayData` objects are also converted to dictionaries.
+        """
+        return asdict(self)
 
 @functools.lru_cache(maxsize=128)
 def bs_calendar(year: int, month: Optional[int] = None) -> Union[CalendarMonthData, List[CalendarMonthData]]:

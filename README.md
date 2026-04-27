@@ -182,11 +182,25 @@ print(f"Difference: {diff}")
 
 # --- Calendar Generation System ---
 from bikram_sambat import bs_calendar, ad_calendar, monthcalendar
+import json
 
 # Get a day-by-day calendar mapping for a BS month
 bs_cal = bs_calendar(year=2080, month=1)
 print(f"BS Month 2080-01 has {len(bs_cal.days)} days. First day is AD: {bs_cal.days[0].ad_full_date}")
 # >> BS Month 2080-01 has 31 days. First day is AD: 2023-04-14
+
+# Generate an AD to BS calendar mapping
+ad_cal = ad_calendar(year=2024, month=4)
+print(f"AD Month 2024-04 starts in BS Year {ad_cal.bs_year}, Month {ad_cal.bs_month}")
+# >> AD Month 2024-04 starts in BS Year 2080, Month 12
+
+# Easily convert to a dictionary for JSON serialization
+cal_dict = bs_calendar(year=2083, month=1).to_dict()
+print(json.dumps(cal_dict, indent=2)[:65] + " ...")
+# >> {
+# >>   "bs_year": 2083,
+# >>   "bs_month": 1,
+# >>   "ad_year": 2026, ...
 
 # Get a matrix for UI rendering (like python's calendar.monthcalendar)
 matrix = monthcalendar(year=2080, month=1)

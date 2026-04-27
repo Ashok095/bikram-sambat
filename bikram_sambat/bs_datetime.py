@@ -760,7 +760,8 @@ class BSDatetime(_dt.datetime):
                 localized_dt = tzinfo.localize(temp_dt, is_dst=(self.fold == 0))
             except pytz.exceptions.NonExistentTimeError:
                 localized_dt = tzinfo.localize(temp_dt, is_dst=(self.fold == 0))
-            tzinfo = localized_dt.tzinfo
+            return localized_dt.replace(fold=self.fold)
+            
         return _dt.datetime(
             greg_date.year,
             greg_date.month,

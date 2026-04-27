@@ -142,3 +142,21 @@ def test_invalid_monthcalendar_input():
         monthcalendar(year=1800, month=1)
     with pytest.raises(ValueError):
         monthcalendar(year=2080, month=13)
+
+def test_to_dict():
+    # Test to_dict on CalendarMonthData and CalendarDayData
+    data = bs_calendar(year=2083, month=1)
+    
+    # Should convert CalendarMonthData to a dict
+    month_dict = data.to_dict()
+    assert isinstance(month_dict, dict)
+    assert month_dict["bs_year"] == 2083
+    assert month_dict["bs_month"] == 1
+    
+    # Nested CalendarDayData should be a list of dicts
+    assert isinstance(month_dict["days"], list)
+    assert isinstance(month_dict["days"][0], dict)
+    assert month_dict["days"][0]["bs_year"] == 2083
+    assert month_dict["days"][0]["bs_month"] == 1
+    assert month_dict["days"][0]["bs_day"] == 1
+    assert month_dict["days"][0]["ad_full_date"] == "2026-04-14"

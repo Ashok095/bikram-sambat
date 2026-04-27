@@ -42,3 +42,16 @@ This guide provides a brief overview of the ``bikram-sambat`` library's main fea
    days_left = end_of_year - start_date
    print(f"Days from {start_date} to {end_of_year}: {days_left.days}")
    # >> Days from 2081-12-01 to 2081-12-30: 29
+
+   # --- Calendar Generation System ---
+   from bikram_sambat import bs_calendar, monthcalendar
+
+   # Get a day-by-day calendar mapping for a BS month
+   bs_cal = bs_calendar(year=2080, month=1)
+   print(f"BS Month 2080-01 has {len(bs_cal.days)} days.")
+   # >> BS Month 2080-01 has 31 days.
+
+   # Get a matrix for UI rendering (like python's calendar.monthcalendar)
+   matrix = monthcalendar(year=2080, month=1)
+   print(f"First week of 2080 Baishakh: {matrix[0]}")
+   # >> First week of 2080 Baishakh: [0, 0, 0, 0, 0, 1, 2]  (Note: Weeks start on Sunday)

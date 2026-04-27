@@ -95,6 +95,7 @@ Provides structural mappings and matrices. All functions are `@functools.lru_cac
 - `bs_calendar(year, month=None)`: Returns `CalendarMonthData` mapped from BS Day 1. (If `month` omitted, returns `List[CalendarMonthData]` for the whole year).
 - `ad_calendar(year, month=None)`: Returns `CalendarMonthData` mapped from AD Day 1.
 - `monthcalendar(year, month)`: Returns a week-by-week matrix (`List[List[int]]`) of the given BS month, starting on **Sunday**.
+- **Data Models:** Both `CalendarMonthData` and `CalendarDayData` expose a `.to_dict()` method for easy JSON serialization.
 
 ### 7. Formatting Directives (`strftime` / `fromstrftime`)
 In addition to standard directives, BS classes support:
