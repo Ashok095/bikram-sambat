@@ -16,4 +16,5 @@ This guide provides a more in-depth look at the ``bikram-sambat`` library.
    user_guide/timezone
    user_guide/formatting
    user_guide/conversion
+   user_guide/calendar
 

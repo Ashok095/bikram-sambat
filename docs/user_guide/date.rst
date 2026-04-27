@@ -55,6 +55,19 @@ Once you have a ``date`` object, you can easily access its components:
    print(f"Day: {d.day}")
    # >> Day: 15
 
+Weekdays
+--------
+
+The ``bikram_sambat`` library handles weekdays according to the Nepali calendar, where the week begins on Sunday.
+
+- **``weekday()``**: Returns 0 for Sunday and 6 for Saturday.
+- **``isoweekday()``**: Returns 1 for Sunday and 7 for Saturday.
+
+.. note::
+   **The ``isoweekday()`` paradox:** 
+   Standard Python follows the ISO-8601 standard where Monday = 1. However, since this library prioritizes the Nepali calendar convention (Sunday as the first day), ``isoweekday()`` returns **1 for Sunday**. This ensures internal consistency within the library but differs from the international standard.
+
+
 Comparing Dates
 ---------------
 

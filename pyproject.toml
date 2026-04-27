@@ -11,7 +11,11 @@ authors = [
 description = "A comprehensive, modern, and easy-to-use Python library for the Bikram Sambat (BS) calendar system."
 readme = "README.md"
 requires-python = ">=3.8"
-license = { file = "LICENSE" }
+
+license = "MIT"
+license-files = ["LICENSE"]
+
+
 keywords = [
   "bikram-sambat",
   "bikram sambat",
@@ -50,7 +54,6 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Libraries :: Python Modules",
@@ -77,8 +80,12 @@ docs = [
 ]
 
 [tool.setuptools]
-packages = ["bikram_sambat"]
 include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["bikram_sambat*"]
+exclude = ["bikram_sambat.data.__pycache__*"]
 
 [tool.setuptools.dynamic]
 version = { attr = "bikram_sambat.__version__" }

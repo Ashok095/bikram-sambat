@@ -24,6 +24,7 @@ Key Features
 * **Rich Formatting & Parsing**: Full support for ``strftime`` and ``fromstrftime`` with custom directives for Nepali numerals (``२०८१``), English names (``Baishakh``), and Nepali Unicode names (``वैशाख``).
 * **Full Timezone Support**: Create and manipulate timezone-aware ``time`` and ``datetime`` objects using ``pytz``.
 * **Date & Time Arithmetic**: Perform all standard arithmetic operations with ``timedelta`` objects.
+* **Calendar Generation System**: Generate structural matrices and mappings for months or entire years.
 
 Quick Start
 -----------
@@ -46,6 +47,12 @@ Here’s a quick tour of the ``bikram-sambat`` library's main features.
    greg_date = bs_date.togregorian()
    print(f"Gregorian equivalent: {greg_date}")
    # >> Gregorian equivalent: 2024-07-30
+
+   # --- Calendar Generation ---
+   from bikram_sambat import bs_calendar
+   cal = bs_calendar(2081, 1)
+   print(f"Days in Baishakh 2081: {len(cal.days)}")
+   # >> Days in Baishakh 2081: 31
 
 
 Indices and tables
