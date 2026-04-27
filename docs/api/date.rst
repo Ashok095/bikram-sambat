@@ -9,6 +9,14 @@
    :show-inheritance:
    :inherited-members:
 
+   .. note::
+      **The ``isoweekday()`` paradox:** 
+      In the standard Python ``datetime.date`` library, ``isoweekday()`` adheres strictly to the ISO-8601 standard, where Monday = 1 and Sunday = 7. 
+      However, the Nepali calendar dictates that the week begins on Sunday. Therefore, in this library, ``weekday()`` correctly returns 0 for Sunday to align with Nepali conventions. 
+      To maintain compatibility with some existing systems, ``isoweekday()`` simply returns ``weekday() + 1``, which results in **Sunday = 1**. This is technically a violation of the ISO-8601 standard, but is required for backward compatibility within this specific package structure.
+      
+      Developers should be aware of this difference when integrating with international systems!
+
    .. rubric:: Examples
 
    .. code-block:: python

@@ -134,7 +134,7 @@ class TestDateTime(unittest.TestCase):
             self.dt1.strftime(
                 f"{FORMAT_K} {FORMAT_N} {FORMAT_D} {FORMAT_h}:{FORMAT_l} {FORMAT_P}"
             ),
-            "२०८२ जेष्ठ ०२ १५:३० पछिल्लो",
+            "२०८२ जेष्ठ ०२ १५:३० अपराह्न",
         )
         self.assertEqual(self.dt1.strftime(f"{FORMAT_z}"), "+0545")
 
@@ -151,7 +151,7 @@ class TestDateTime(unittest.TestCase):
 
     def test_fromstrftime_nepali(self):
         parsed = BSDatetime.fromstrftime(
-            "२०८२ जेष्ठ ०२ १५:३०:४५ पछिल्लो +0545",
+            "२०८२ जेष्ठ ०२ १५:३०:४५ अपराह्न +0545",
             f"{FORMAT_K} {FORMAT_N} {FORMAT_D} {FORMAT_h}:{FORMAT_l}:{FORMAT_s} {FORMAT_P} {FORMAT_z}",
         )
         self.assertEqual(parsed, self.dt1.replace(microsecond=0))
@@ -239,11 +239,22 @@ class TestDateTime(unittest.TestCase):
             self.dt1.replace(month=13)
 
     def test_now_utcnow(self):
+        from bikram_sambat.conversion import ad_to_bs
+        
+        # Expected Nepal year
+        greg_now = datetime.now(tz=nepal)
+        expected_bs_year, _, _ = ad_to_bs(greg_now.date())
+        
         now = BSDatetime.now(tz=nepal)
-        self.assertEqual(now.year, 2082)  # May 23, 2025 → BS 2082
+        self.assertEqual(now.year, expected_bs_year)
         self.assertEqual(str(now.tzinfo), "Asia/Kathmandu")
+        
+        # Expected UTC year
+        greg_utcnow = datetime.now(tz=utc)
+        expected_utc_year, _, _ = ad_to_bs(greg_utcnow.date())
+        
         utc_now = BSDatetime.utcnow()
-        self.assertEqual(utc_now.year, 2082)
+        self.assertEqual(utc_now.year, expected_utc_year)
         self.assertEqual(utc_now.tzinfo, pytz.UTC)
 
     def test_repr(self):

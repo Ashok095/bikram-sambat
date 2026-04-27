@@ -45,4 +45,4 @@
       # >> Saturday, Baishakh 01, 2081 10:00:00 AM Asia/Kathmandu
 
       print(dt_aware.strftime("%G, %N %D, %K %i:%l:%s %P"))
-      # >> शनिबार, वैशाख ०१, २०८१ १०:००:०० पहिले
+      # >> शनिबार, वैशाख ०१, २०८१ १०:००:०० पूर्वाह्न

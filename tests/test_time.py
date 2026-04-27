@@ -71,7 +71,7 @@ class TestBSTime(unittest.TestCase):
     def test_strftime_nepali(self):
         self.assertEqual(
             self.t2.strftime(f"{FORMAT_h}:{FORMAT_l}:{FORMAT_s} {FORMAT_P}"),
-            "१४:३०:४५ पछिल्लो",
+            "१४:३०:४५ अपराह्न",
         )
 
         self.assertEqual(self.t2.strftime(f"{FORMAT_t}"), "१२३४५६")
@@ -90,7 +90,7 @@ class TestBSTime(unittest.TestCase):
 
     def test_fromstrftime_nepali(self):
         parsed = BSTime.fromstrftime(
-            "१४:३०:४५ पछिल्लो +0545",
+            "१४:३०:४५ अपराह्न +0545",
             f"{FORMAT_h}:{FORMAT_l}:{FORMAT_s} {FORMAT_P} {FORMAT_z}",
         )
         self.assertEqual(parsed.hour, 14)
