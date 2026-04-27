@@ -26,7 +26,8 @@ class CalendarDayData:
     ad_year: int
     ad_month: int
     ad_day: int
-    weekday: int  # 0=Sunday, 6=Saturday
+    ad_full_date: str
+    week_day: int  # 0=Sunday, 6=Saturday
 
 @dataclass
 class CalendarMonthData:
@@ -69,7 +70,8 @@ def bs_calendar(year: int, month: Optional[int] = None) -> Union[CalendarMonthDa
             ad_year=ad_date.year,
             ad_month=ad_date.month,
             ad_day=ad_date.day,
-            weekday=bs_date_obj.weekday()
+            ad_full_date=ad_date.isoformat(),
+            week_day=bs_date_obj.weekday()
         ))
         
     return CalendarMonthData(
@@ -112,7 +114,8 @@ def ad_calendar(year: int, month: Optional[int] = None) -> Union[CalendarMonthDa
             ad_year=year,
             ad_month=month,
             ad_day=day,
-            weekday=bs_date_obj.weekday()
+            ad_full_date=ad_date.isoformat(),
+            week_day=bs_date_obj.weekday()
         ))
         
     return CalendarMonthData(

@@ -32,7 +32,7 @@ This guide provides a brief overview of the ``bikram-sambat`` library's main fea
    # Format in Nepali
    formatted = bs_dt_aware.strftime("%G, %N %D, %K साल, %i:%l %P")
    print(f"Formatted in Nepali: {formatted}")
-   # >> Formatted in Nepali: बुधवार, भदौ १६, २०८१ साल, १०:३० पहिले
+   # >> Formatted in Nepali: बुधवार, भदौ १६, २०८१ साल, १०:३० पूर्वाह्न
 
    # --- Arithmetic ---
 

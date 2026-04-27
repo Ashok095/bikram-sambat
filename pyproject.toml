@@ -31,7 +31,17 @@ keywords = [
   "date convertor",
   "date converter",
   "nepali date conversion",
-  "python nepali date"
+  "python nepali date",
+  "nepali-calendar",
+  "bs-calendar",
+  "patro",
+  "nepali-patro",
+  "python-bikram-sambat",
+  "ad-to-bs",
+  "bs-to-ad",
+  "nepali-timezone",
+  "asia-kathmandu",
+  "nepali-time"
 ]
 classifiers = [
     "Programming Language :: Python :: 3",

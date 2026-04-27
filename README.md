@@ -50,6 +50,10 @@ pip install bikram-sambat
 - **Arithmetic Operations:**
   - Perform addition and subtraction with `timedelta` objects.
   - Calculate differences between BS dates/datetimes.
+- **Calendar Generation System:**
+  - Generate full day-by-day mapping of BS to AD months and years.
+  - Generate AD to BS calendar mappings.
+  - Matrix-style `monthcalendar` for building UI calendars.
 - **Standard Python Interface:**
   - Familiar API, largely compatible with Python's built-in `datetime` module, making it easy to learn and use.
   - Inherits from `datetime.date`, `datetime.time`, and `datetime.datetime` where appropriate.
@@ -126,7 +130,7 @@ print(f"BS Time (Nepal): {bs_time_nepal} {bs_time_nepal}")
 
 # Formatting time
 print(bs_time_nepal.strftime("%I:%M:%S %p %P [%Z]"))
-# >> 10:15:00 AM पहिले [Asia/Kathmandu]
+# >> 10:15:00 AM पूर्वाह्न [Asia/Kathmandu]
 
 
 # --- Bikram Sambat Datetimes ---
@@ -176,6 +180,18 @@ diff = future_dt - now_bs_nepal
 print(f"Difference: {diff}")
 # >> Difference: 10 days, 5:00:00
 
+# --- Calendar Generation System ---
+from bikram_sambat import bs_calendar, ad_calendar, monthcalendar
+
+# Get a day-by-day calendar mapping for a BS month
+bs_cal = bs_calendar(year=2080, month=1)
+print(f"BS Month 2080-01 has {len(bs_cal.days)} days. First day is AD: {bs_cal.days[0].ad_full_date}")
+# >> BS Month 2080-01 has 31 days. First day is AD: 2023-04-14
+
+# Get a matrix for UI rendering (like python's calendar.monthcalendar)
+matrix = monthcalendar(year=2080, month=1)
+print(f"First week of 2080 Baishakh: {matrix[0]}")
+# >> First week of 2080 Baishakh: [0, 0, 0, 0, 0, 1, 2]  (Note: Weeks start on Sunday)
 
 ```
 

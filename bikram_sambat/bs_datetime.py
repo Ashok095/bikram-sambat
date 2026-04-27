@@ -305,7 +305,7 @@ class BSDatetime(_dt.datetime):
             >>> dt.strftime('%Y %B %d, %I:%M %p %Z')
             '2081 Shrawan 15, 10:10 PM Asia/Kathmandu'
             >>> dt.strftime('%K %N %D, %i:%l %P')
-            '२०८१ श्रावण १५, १०:१० पछिल्लो'
+            '२०८१ श्रावण १५, १०:१० अपराह्न'
         """
         if not isinstance(format, str):
             raise InvalidTypeError("Format must be a string")

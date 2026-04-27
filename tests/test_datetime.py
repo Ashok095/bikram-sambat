@@ -134,7 +134,7 @@ class TestDateTime(unittest.TestCase):
             self.dt1.strftime(
                 f"{FORMAT_K} {FORMAT_N} {FORMAT_D} {FORMAT_h}:{FORMAT_l} {FORMAT_P}"
             ),
-            "२०८२ जेष्ठ ०२ १५:३० पछिल्लो",
+            "२०८२ जेष्ठ ०२ १५:३० अपराह्न",
         )
         self.assertEqual(self.dt1.strftime(f"{FORMAT_z}"), "+0545")
 
@@ -151,7 +151,7 @@ class TestDateTime(unittest.TestCase):
 
     def test_fromstrftime_nepali(self):
         parsed = BSDatetime.fromstrftime(
-            "२०८२ जेष्ठ ०२ १५:३०:४५ पछिल्लो +0545",
+            "२०८२ जेष्ठ ०२ १५:३०:४५ अपराह्न +0545",
             f"{FORMAT_K} {FORMAT_N} {FORMAT_D} {FORMAT_h}:{FORMAT_l}:{FORMAT_s} {FORMAT_P} {FORMAT_z}",
         )
         self.assertEqual(parsed, self.dt1.replace(microsecond=0))

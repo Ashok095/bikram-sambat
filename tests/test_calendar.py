@@ -20,7 +20,49 @@ def test_bs_calendar_month():
     assert first_day.ad_year == 2023
     assert first_day.ad_month == 4
     assert first_day.ad_day == 14
-    assert first_day.weekday == 5  # 0=Sun, 5=Friday
+    assert first_day.ad_full_date == "2023-04-14"
+    assert first_day.week_day == 5  # 0=Sun, 5=Friday
+
+def test_bs_calendar_custom_data():
+    # User provided cases
+    # 2083-01-01 -> 2026-04-14
+    data1 = bs_calendar(2083, 1)
+    day1 = data1.days[0]
+    assert day1.bs_year == 2083
+    assert day1.bs_month == 1
+    assert day1.bs_day == 1
+    assert day1.ad_day == 14
+    assert day1.ad_full_date == "2026-04-14"
+
+    # 2082-11-01 -> 2026-02-13
+    data2 = bs_calendar(2082, 11)
+    day2 = data2.days[0]
+    assert day2.bs_year == 2082
+    assert day2.bs_month == 11
+    assert day2.bs_day == 1
+    assert day2.ad_day == 13
+    assert day2.ad_full_date == "2026-02-13"
+    assert day2.week_day == 5
+
+    # 2082-12-01 -> 2026-03-15
+    data3 = bs_calendar(2082, 12)
+    day3 = data3.days[0]
+    assert day3.bs_year == 2082
+    assert day3.bs_month == 12
+    assert day3.bs_day == 1
+    assert day3.ad_day == 15
+    assert day3.ad_full_date == "2026-03-15"
+    assert day3.week_day == 0
+
+    # 2079-12-01 -> 2023-03-15
+    data4 = bs_calendar(2079, 12)
+    day4 = data4.days[0]
+    assert day4.bs_year == 2079
+    assert day4.bs_month == 12
+    assert day4.bs_day == 1
+    assert day4.ad_day == 15
+    assert day4.ad_full_date == "2023-03-15"
+    assert day4.week_day == 3
 
 def test_bs_calendar_year():
     # Fetch full BS year 2080
@@ -50,7 +92,8 @@ def test_ad_calendar_month():
     assert first_day.bs_year == 2080
     assert first_day.bs_month == 10
     assert first_day.bs_day == 18
-    assert first_day.weekday == 4  # 0=Sun, 4=Thursday
+    assert first_day.ad_full_date == "2024-02-01"
+    assert first_day.week_day == 4  # 0=Sun, 4=Thursday
 
 def test_ad_calendar_year():
     # Fetch full AD year 2024

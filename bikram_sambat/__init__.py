@@ -43,7 +43,7 @@ Getting Started:
     >>> # Format in Nepali
     >>> formatted = bs_dt_aware.strftime("%G, %N %D, %K साल, %i:%l %P")
     >>> print(f"Formatted in Nepali: {formatted}")
-    Formatted in Nepali: बुधवार, भदौ १६, २०८१ साल, १०:३० पहिले
+    Formatted in Nepali: बुधवार, भदौ १६, २०८१ साल, १०:३० पूर्वाह्न
 
     >>> # Perform arithmetic
     >>> event_date = date(2082, 1, 1)
@@ -77,7 +77,13 @@ from .bs_timezone import (
 
 
 from . import constants
-from .calendar import bs_calendar, ad_calendar, monthcalendar, CalendarMonthData, CalendarDayData
+from .calendar import (
+    bs_calendar,
+    ad_calendar,
+    monthcalendar,
+    CalendarMonthData,
+    CalendarDayData,
+)
 
 __all__ = [
     # Core classes
