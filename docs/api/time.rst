@@ -29,5 +29,5 @@
       # >> 10:30:45 AM Asia/Kathmandu
 
       print(t_aware.strftime("%i:%l:%s %P"))
-      # >> १०:३०:४५ पहिले
+      # >> १०:३०:४५ पूर्वाह्न
       

@@ -39,7 +39,7 @@ Attributes:
     AM_PM_ENGLISH (list[str]): A list containing the English AM/PM designators
         ["AM", "PM"].
     AM_PM_NEPALI (list[str]): A list containing the Nepali AM/PM designators
-        ["पहिले", "पछिल्लो"].
+        ["पूर्वाह्न", "अपराह्न"].
 """
 
 # Format directives
@@ -63,7 +63,7 @@ FORMAT_h = "%h"  # Hour (24-hour, Nepali Unicode, e.g., १५)
 FORMAT_I = "%I"  # Hour (12-hour, e.g., 03)
 FORMAT_i = "%i"  # Hour (12-hour, Nepali Unicode, e.g., ०३)
 FORMAT_p = "%p"  # AM/PM (e.g., AM, PM)
-FORMAT_P = "%P"  # AM/PM in Nepali Unicode (e.g., पहिले, पछिल्लो)
+FORMAT_P = "%P"  # AM/PM in Nepali Unicode (e.g., पूर्वाह्न, अपराह्न)
 FORMAT_M = "%M"  # Minute (e.g., 30)
 FORMAT_l = "%l"  # Minute in Nepali Unicode (e.g., ३०)
 FORMAT_S = "%S"  # Second (e.g., 45)
@@ -117,7 +117,7 @@ TIME_FORMAT_DIRECTIVES = [
     FORMAT_f,  # Microsecond (e.g., 123456)
     FORMAT_t,  # Microsecond, Nepali Unicode (e.g., १२३४५६)
     FORMAT_p,  # AM/PM, English (e.g., PM)
-    FORMAT_P,  # AM/PM, Nepali Unicode (e.g., पछिल्लो)
+    FORMAT_P,  # AM/PM, Nepali Unicode (e.g., अपराह्न)
     FORMAT_z,  # UTC offset (e.g., +0545)
     FORMAT_Z,  # Timezone name (e.g., Asia/Kathmandu)
     FORMAT_X,  # Standard time format (e.g., 15:30:45)
@@ -154,7 +154,7 @@ DATETIME_FORMAT_DIRECTIVES = [
     FORMAT_f,  # Microsecond (e.g., 123456)
     FORMAT_t,  # Microsecond, Nepali Unicode (e.g., १२३४५६)
     FORMAT_p,  # AM/PM, English (e.g., PM)
-    FORMAT_P,  # AM/PM, Nepali Unicode (e.g., पछिल्लो)
+    FORMAT_P,  # AM/PM, Nepali Unicode (e.g., अपराह्न)
     FORMAT_z,  # UTC offset (e.g., +0545)
     FORMAT_Z,  # Timezone name (e.g., Asia/Kathmandu)
     FORMAT_X,  # Standard time format (e.g., 15:30:45)
@@ -280,7 +280,7 @@ WEEKDAY_NAMES_SHORT_NEPALI = [name[:3] for name in WEEKDAY_NAMES_FULL_NEPALI]
 # AM/PM
 AM_ENGLISH = "AM"
 PM_ENGLISH = "PM"
-AM_NEPALI = "पहिले"
-PM_NEPALI = "पछिल्लो"
+AM_NEPALI = "पूर्वाह्न"
+PM_NEPALI = "अपराह्न"
 AM_PM_ENGLISH = [AM_ENGLISH, PM_ENGLISH]
 AM_PM_NEPALI = [AM_NEPALI, PM_NEPALI]

@@ -189,7 +189,7 @@ class BSTime(_dt.time):
         Example:
             >>> t = BSTime(15, 30, tzinfo=pytz.timezone("Asia/Kathmandu"))
             >>> t.strftime("%H:%M %P")
-            '15:30 पछिल्लो'
+            '15:30 अपराह्न'
             >>> t.strftime("%I:%M %p in Nepali is %i:%l")
             '03:30 PM in Nepali is ०३:३०'
 
@@ -256,7 +256,7 @@ class BSTime(_dt.time):
         from strings, including those with Nepali numerals or names.
 
         Example:
-            >>> BSTime.fromstrftime("15:30 पछिल्लो", "%H:%M %P")
+            >>> BSTime.fromstrftime("15:30 अपराह्न", "%H:%M %P")
             bikram_sambat.time.BSTime(15, 30)
 
         Args:

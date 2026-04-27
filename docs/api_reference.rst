@@ -14,4 +14,5 @@ This section provides a detailed API reference for the ``bikram-sambat`` library
    api/datetime
    api/timedelta
    api/timezone
+   api/calendar
    api/exceptions

@@ -305,7 +305,7 @@ class BSDatetime(_dt.datetime):
             >>> dt.strftime('%Y %B %d, %I:%M %p %Z')
             '2081 Shrawan 15, 10:10 PM Asia/Kathmandu'
             >>> dt.strftime('%K %N %D, %i:%l %P')
-            '२०८१ श्रावण १५, १०:१० पछिल्लो'
+            '२०८१ श्रावण १५, १०:१० अपराह्न'
         """
         if not isinstance(format, str):
             raise InvalidTypeError("Format must be a string")
@@ -760,7 +760,8 @@ class BSDatetime(_dt.datetime):
                 localized_dt = tzinfo.localize(temp_dt, is_dst=(self.fold == 0))
             except pytz.exceptions.NonExistentTimeError:
                 localized_dt = tzinfo.localize(temp_dt, is_dst=(self.fold == 0))
-            tzinfo = localized_dt.tzinfo
+            return localized_dt.replace(fold=self.fold)
+            
         return _dt.datetime(
             greg_date.year,
             greg_date.month,

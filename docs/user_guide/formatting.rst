@@ -41,7 +41,7 @@ These directives allow you to format dates and times using Nepali numerals and n
 * ``%i``: Hour (12-hour clock) in Nepali numerals.
 * ``%l``: Minute in Nepali numerals.
 * ``%s``: Second in Nepali numerals.
-* ``%P``: "AM/PM" in Nepali (e.g., ``पहिले`` for AM, ``पछि`` for PM).
+* ``%P``: "AM/PM" in Nepali (e.g., ``पूर्वाह्न`` for AM, ``पछि`` for PM).
 
 **Examples**
 
@@ -61,7 +61,7 @@ These directives allow you to format dates and times using Nepali numerals and n
 
    # Nepali formatting
    print(dt.strftime("%K-%N-%D %i:%l:%s %P"))
-   # >> २०८१-वैशाख-०१ ०१:३०:४५ पछिल्लो
+   # >> २०८१-वैशाख-०१ ०१:३०:४५ अपराह्न
 
    print(dt.strftime("%G, %N %D, %K"))
    # >> शनिबार, वैशाख ०१, २०८१

@@ -7,7 +7,7 @@ Bikram Sambat calendar system.
 """
 
 import re
-from typing import SupportsIndex, cast
+from typing import SupportsIndex, cast, Optional
 
 import datetime as _dt
 from .bs_timedelta import BSTimedelta
@@ -267,9 +267,9 @@ class BSDate(_dt.date):
 
     def replace(
         self,
-        year: SupportsIndex = -1,
-        month: SupportsIndex = -1,
-        day: SupportsIndex = -1,
+        year: Optional[SupportsIndex] = None,
+        month: Optional[SupportsIndex] = None,
+        day: Optional[SupportsIndex] = None,
     ) -> "BSDate":
         """Returns a new BSDate with one or more components replaced.
 
@@ -278,9 +278,9 @@ class BSDate(_dt.date):
             >>> d.replace(day=1)
             bikram_sambat.date.BSDate(2081, 4, 1)
         """
-        new_year = self._bs_year if year == -1 else year
-        new_month = self._bs_month if month == -1 else month
-        new_day = self._bs_day if day == -1 else day
+        new_year = self._bs_year if year is None else year
+        new_month = self._bs_month if month is None else month
+        new_day = self._bs_day if day is None else day
         if not all(isinstance(x, int) for x in (new_year, new_month, new_day)):
             raise InvalidTypeError("year, month, day must be integers")
 
